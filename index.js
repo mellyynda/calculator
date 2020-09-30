@@ -61,3 +61,24 @@ let myCalculator = function (myStr, a, b) {
             return divide(a, b);
     }
 }
+
+
+let myCalculatorAll = function (myStr, a) {
+    let arr = [];
+    console.log(arr);
+    for (i = 1; i < arguments.length; i++) {
+        arr.push(arguments[i]);
+    }
+    console.log(arr);
+
+    switch (myStr) {
+        case "add":
+            return sumAll(...arr);
+        case "subtract":
+            return subtractAll(...arr);
+        case "multiply":
+            return multiplyAll(...arr);
+        case "divide":
+            return divideAll(...arr);
+    }
+}

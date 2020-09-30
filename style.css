@@ -1,0 +1,62 @@
+/*google font Orbitron-cool for calculators*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Orbitron;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 600px;
+    min-width: 350px;
+    flex-grow: 1;
+    border: .4px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 70px 50px 50px 50px;
+    grid-gap: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #801C0D;
+}
+
+.screen {
+    grid-column: span 4;
+    border: .2px solid black;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.number,
+.operator {
+    border: .2px solid gray;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: #803D33;
+}
+
+.equal {
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .2px solid gray;
+    background-color: #FF381A;
+    border-radius: 50px;
+}
