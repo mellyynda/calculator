@@ -1,45 +1,13 @@
-let sumAll = function () {
-    let result = 0;
-    for (i = 0; i < arguments.length; i++) {
-        result += arguments[i];
-    }
-    return result
-}
-
 let sum = function (a, b) {
     return a + b;
-}
-
-let subtractAll = function (a) {
-    let result = a;
-    for (i = 1; i < arguments.length; i++) {
-        result -= arguments[i];
-    }
-    return result;
 }
 
 let subtract = function (a, b) {
     return a - b;
 }
 
-let multiplyAll = function () {
-    let result = 1;
-    for (i = 0; i < arguments.length; i++) {
-        result *= arguments[i];
-    }
-    return result;
-}
-
 let multiply = function (a, b) {
     return a * b;
-}
-
-let divideAll = function (a) {
-    let result = a;
-    for (i = 1; i < arguments.length; i++) {
-        result /= arguments[i];
-    }
-    return result;
 }
 
 let divide = function (a, b) {
@@ -63,7 +31,42 @@ let myCalculator = function (myStr, a, b) {
 }
 
 
-let myCalculatorAll = function (myStr, a) {
+
+
+
+let sumAll = function () {
+    let result = 0;
+    for (i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    return result
+}
+
+let subtractAll = function (a) {
+    let result = a;
+    for (i = 1; i < arguments.length; i++) {
+        result -= arguments[i];
+    }
+    return result;
+}
+
+let multiplyAll = function () {
+    let result = 1;
+    for (i = 0; i < arguments.length; i++) {
+        result *= arguments[i];
+    }
+    return result;
+}
+
+let divideAll = function (a) {
+    let result = a;
+    for (i = 1; i < arguments.length; i++) {
+        result /= arguments[i];
+    }
+    return result;
+}
+
+let myCalculatorAll = function (operator, a) {
     let arr = [];
     console.log(arr);
     for (i = 1; i < arguments.length; i++) {
@@ -71,7 +74,7 @@ let myCalculatorAll = function (myStr, a) {
     }
     console.log(arr);
 
-    switch (myStr) {
+    switch (operator) {
         case "add":
             return sumAll(...arr);
         case "subtract":
