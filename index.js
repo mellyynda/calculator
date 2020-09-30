@@ -1,3 +1,4 @@
+//simple calculator solution, not used
 let sum = function (a, b) {
     return a + b;
 }
@@ -33,7 +34,9 @@ let myCalculator = function (myStr, a, b) {
 
 
 
+//more complex calculator solution trying to use
 
+//small operator functions with no parametre limit
 let sumAll = function () {
     let result = 0;
     for (i = 0; i < arguments.length; i++) {
@@ -66,6 +69,7 @@ let divideAll = function (a) {
     return result;
 }
 
+//calculator function with no limit of parameters
 let myCalculatorAll = function (operator, a) {
     let arr = [];
     console.log(arr);
@@ -84,4 +88,64 @@ let myCalculatorAll = function (operator, a) {
         case "divide":
             return divideAll(...arr);
     }
+}
+//initialize arguments string and argument numbers
+let input = [];
+let num = "";
+
+// grab screen, grab number buttons and decide onclick action
+// let zero = document.querySelector('body > div > button:nth-child(14)');
+// let one = document.querySelector('body > div > button:nth-child(10)');
+// let two = document.querySelector('body > div > button:nth-child(11)');
+// let three = document.querySelector('body > div > button:nth-child(12)');
+// let four = document.querySelector('body > div > button:nth-child(6)');
+// let five = document.querySelector('body > div > button:nth-child(7)');
+// let six = document.querySelector('body > div > button:nth-child(8)');
+// let seven = document.querySelector('body > div > button:nth-child(2)');
+// let eight = document.querySelector('body > div > button:nth-child(3)');
+// let nine = document.querySelector('body > div > button:nth-child(4)');
+
+let screen = document.querySelector('body > div > div');
+
+
+let numbers = document.querySelectorAll('.number');
+numbers.forEach(number => {
+
+    number.addEventListener('click', function () {
+        if (num < 921458621) {
+            num += number.value;
+
+            let n = Number(number.value);
+
+            screen.innerHTML += n;
+        } else alert('Your number is too high, please refresh the page and select a lower number');
+    });
+
+});
+
+console.log(num);
+
+let operators = document.querySelectorAll('.operator');
+operators.forEach(operator => {
+
+    operator.addEventListener('click', function () {
+        console.log("clicked operator")
+        input.push(operator.value);
+        console.log(input);
+        input.push(Number(num));
+        num = "";
+        console.log(input);
+        screen.innerHTML += operator.innerHTML;
+    });
+
+});
+
+let equal = document.querySelector('.equal');
+
+equal.onclick = function () {
+    input.push(Number(num));
+    num = "";
+    console.log(input);
+    screen.innerHTML = myCalculatorAll(...input);
+    input = [];
 }
