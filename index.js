@@ -147,8 +147,9 @@ let equal = document.querySelector('.equal');
 
 equal.onclick = function () {
     input.push(Number(num));
-    num = "";
+
     console.log(input);
     screen.innerHTML = myCalculatorAll(...input);
+    num = myCalculatorAll(...input);
     input = [];
 }

@@ -44,7 +44,7 @@ p {
     width: 95%;
     min-width: 350px;
     flex-grow: 2;
-    border: 1px solid #E80C15;
+    border: 3px solid #E80C15;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 70px 60px 60px 60px;
@@ -57,7 +57,7 @@ p {
 
 .screen {
     grid-column: span 4;
-    border: 0.2px solid #E80C15;
+    border: 0.5px solid #E80C15;
     border-radius: 20px;
     background-color: #fff;
     text-align: right;
@@ -71,7 +71,9 @@ p {
 
 .number,
 .operator {
-    border: .2px solid #E80C15;
+    /* border: .2px solid #E80C15; */
+    /* border-color: #E80C15; */
+    /* border-width: 2px; */
     height: 60px;
     width: 100%;
     display: flex;
@@ -98,7 +100,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: .2px solid #E80C15;
+    /* border: .2px solid #E80C15; */
+    /* border-color: #E80C15; */
     background-color: #FF0D90;
     border-radius: 50px;
 }
