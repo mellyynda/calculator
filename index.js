@@ -130,8 +130,11 @@ operators.forEach(operator => {
 
     operator.addEventListener('click', function () {
         console.log("clicked operator")
-        input.push(operator.value);
-        console.log(input);
+        console.log(typeof input[0] == 'string');
+        if (typeof input[0] !== 'string') {
+            input.push(operator.value);
+            console.log(input);
+        }
         input.push(Number(num));
         num = "";
         console.log(input);
