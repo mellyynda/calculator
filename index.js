@@ -72,11 +72,11 @@ let divideAll = function (a) {
 //calculator function with no limit of parameters
 let myCalculatorAll = function (operator, a) {
     let arr = [];
-    console.log(arr);
+    // console.log(arr);
     for (i = 1; i < arguments.length; i++) {
         arr.push(arguments[i]);
     }
-    console.log(arr);
+    // console.log(arr);
 
     switch (operator) {
         case "add":
@@ -131,14 +131,20 @@ operators.forEach(operator => {
     operator.addEventListener('click', function () {
         console.log("clicked operator")
         console.log(typeof input[0] == 'string');
+
         if (typeof input[0] !== 'string') {
             input.push(operator.value);
             console.log(input);
         }
-        input.push(Number(num));
-        num = "";
-        console.log(input);
-        screen.innerHTML += operator.innerHTML;
+        if (input[0] !== operator.value) {
+            alert('Press equal to use a new operator');
+        } else {
+            input.push(Number(num));
+            num = "";
+            console.log(input);
+            screen.innerHTML += operator.innerHTML;
+        }
+
     });
 
 });
@@ -152,4 +158,12 @@ equal.onclick = function () {
     screen.innerHTML = myCalculatorAll(...input);
     num = myCalculatorAll(...input);
     input = [];
+}
+
+let clear = document.querySelector('body > div > button.clear')
+
+clear.onclick = function () {
+    input = [];
+    num = "";
+    screen.innerHTML = "";
 }
